@@ -1,0 +1,16 @@
+<tr>
+    <td>{{ articulo.titulo }}</td>
+    <td>{{ articulo.fecha }}</td>
+    <td>
+      <a href="{% url 'articulo_detail' articulo.id %}">Ver</a>
+    </td>
+    <td>
+      <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+    </td>
+    <td>
+      <form action="{% url 'eliminar_blog' articulo.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="eliminar"/>
+      </form>
+    </td>
+  </tr>

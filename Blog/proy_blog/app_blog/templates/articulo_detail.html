@@ -1,0 +1,25 @@
+
+
+{% block contenido %}
+
+<p>
+  <strong>Titulo:</strong> {{object.titulo}}
+</p>
+<p>
+  <strong>Subtitulo:</strong> {{object.subtitulo}}
+</p>
+<p>
+  <strong>Cuerpo:</strong> {{object.cuerpo}}
+</p>
+<p>
+  <strong>Autor:</strong> {{object.autor}}
+</p>
+<p>
+  <strong>Fecha:</strong> {{object.fecha}}
+</p>
+
+<br>
+<a href="{% url 'lista_blog' %}">Volver a blogs</a>
+
+
+{% endblock contenido %}

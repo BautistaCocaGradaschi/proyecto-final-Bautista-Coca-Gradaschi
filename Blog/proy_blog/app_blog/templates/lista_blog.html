@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista rate</title>
+</head>
+<table class = "table">
+    <tbody>
+        <tr>
+            <th>Titulo</th>
+            <th>fecha</th>
+        </tr> 
+        {% for art in blogs %}
+        <tr>
+            <td>{{ art.titulo }}</td>
+            <td>{{ art.fecha }}</td>
+            <td>
+                <a href="{%url 'articulo_detail' art.id%}">Ver mas</a>
+            </td>
+            <td>
+                <form action = "{%url 'eliminar_blog' art.id%}" method = 'post'>
+                    {% csrf_token %}
+                    <input type ="submit" class = "btn btn link" value = "eliminar"/>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+</html>
